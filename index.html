@@ -1,54 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>pack.mcmeta Generator</title>
-</head>
-
 <body>
-
-<h1>pack.mcmeta Generator</h1>
-
-<p>Description</p>
-<input id="desc" placeholder="My Resource Pack">
-
-<p>Minecraft Version</p>
-<select id="version">
-<option value="34">1.21</option>
-<option value="32">1.20.5–1.20.6</option>
-<option value="18">1.20.2–1.20.4</option>
-<option value="15">1.20–1.20.1</option>
-</select>
-
-<br><br>
-
-<button onclick="generate()">Download pack.mcmeta</button>
-
-<script>
-function generate() {
-
-var desc = document.getElementById("desc").value;
-var format = document.getElementById("version").value;
-
-var data = {
-  pack: {
-    pack_format: Number(format),
-    description: desc
-  }
-};
-
-var text = JSON.stringify(data, null, 2);
-
-var blob = new Blob([text], {type:"application/json"});
-var url = URL.createObjectURL(blob);
-
-var a = document.createElement("a");
-a.href = url;
-a.download = "pack.mcmeta";
-a.click();
-
-}
-</script>
-
+<h1>Hello</h1>
 </body>
 </html>
